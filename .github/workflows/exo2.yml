@@ -13,12 +13,6 @@ jobs:
           with:
             node-version: 24.18.0
 
-
-        - uses: actions/cache@v5
-          with:
-            path: ~/.npm
-            key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
         - run: npm ci
         - run: npm test
 
@@ -26,3 +20,4 @@ jobs:
           with:
             name: build
             path : dist/
+            run: touch file.txt
