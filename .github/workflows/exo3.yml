@@ -48,4 +48,14 @@ jobs:
             node-version: ${{ matrix.node }}
 
         - run: npm test
-        
+        - uses: actions/download-artifact@v7
+          with:
+            name: application
+            path : dist/
+
+    deploy:
+      needs: test
+      runs-on: ubuntu-latest
+      ennvironment: staging
+      steps:
+        - run: echo "Deploy to ${{ vars.API_URL }}" 
