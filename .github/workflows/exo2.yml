@@ -27,5 +27,5 @@ jobs:
             name: build
             path : dist/
         - run: |
-          echo "## Build" >> "$GITHUB_STEP_SUMMARY" 
+            echo "## Build" >> "$GITHUB_STEP_SUMMARY" 
         
