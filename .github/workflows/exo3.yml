@@ -56,6 +56,6 @@ jobs:
     deploy:
       needs: test
       runs-on: ubuntu-latest
-      ennvironment: staging
+      environment: staging
       steps:
         - run: echo "Deploy to ${{ vars.API_URL }}" 
