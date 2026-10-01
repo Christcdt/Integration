@@ -12,12 +12,11 @@ jobs:
         - uses: actions/setup-node@v7
           with:
             node-version: 24.18.0
-
         - run: npm ci
         - run: npm run build
         - run: |
             if [ ! -d "dist" ]; then
-              echo "Le dossier dist n'existe pas."
+              echo "::Le dossier dist/ n'existe pas."
               exit 1
             fi
 
